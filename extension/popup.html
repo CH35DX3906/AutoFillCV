@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>秋招简历助手</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icons/icon-32.png">
+</head>
+
+<body class="popup">
+    <header class="topbar">
+        <div class="brand"><img class="logo" src="icons/logo.svg" width="35" height="35" alt="" aria-hidden="true">秋招简历助手</div><span class="badge">BETA</span>
+    </header>
+    <main>
+        <div class="eyebrow">LESS TYPING, MORE OPPORTUNITIES</div>
+        <h1>下一份申请，<br>从这里轻松开始。</h1>
+        <p class="muted">打开招聘申请表，检查匹配结果，再一键填写。</p>
+        <div class="card"><label class="field">本次填写使用<select id="template-select" disabled></select></label>
+            <div class="stat" style="margin-top:14px"><span class="stat-number" id="count">—</span>
+                <div><strong id="profile-name">我的简历</strong>
+                    <div class="muted">项资料已准备好 · 仅存储于本机</div>
+                </div>
+            </div>
+            <div class="actions"><button id="edit">导入 PDF / 编辑资料</button></div>
+        </div>
+        <button class="primary" id="scan">扫描当前页面 ↗</button>
+        <section id="preview" hidden>
+            <div class="card-head" style="margin-top:20px">
+                <h3 id="match-title">检查字段匹配</h3>
+            </div>
+            <p class="muted">可调整每个字段的资料来源；未匹配项默认跳过。</p>
+            <div id="matches" class="match-list"></div><label class="checkbox"><input type="checkbox"
+                    id="overwrite">允许覆盖网页已有内容</label><button id="fill" class="primary">填写已匹配字段</button>
+        </section>
+        <div class="actions"><button id="undo">撤销上次填写</button><button id="demo">打开测试表单</button></div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <p class="footer-note">仅填写当前页面，不会自动提交申请。<br>填写后请检查，复杂下拉框和跨域嵌入表单需手动处理。</p>
+    </main>
+    <script type="module" src="popup.js"></script>
+</body>
+
+</html>

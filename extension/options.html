@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>我的简历 · AutoFillCV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icons/icon-32.png">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand"><img class="logo" src="icons/logo.svg" width="35" height="35" alt="" aria-hidden="true">秋招简历助手 <span class="badge">BETA 0.2.1</span></div><span
+            class="muted">准备一次，让下一次申请更轻松。</span>
+    </header>
+    <main class="page">
+        <div class="intro">
+            <div class="eyebrow">YOUR NEXT CHAPTER</div>
+            <h1>把时间，留给更好的机会。</h1>
+            <p class="muted">导入现有简历，核对个人资料。打开网申页面后，点击插件即可开始填写。</p>
+        </div>
+        <div class="layout">
+            <aside class="sidebar"><a href="#import">01　导入简历</a><a href="#section-0">02　基本信息</a><a
+                    href="#section-1">03　求职意向</a><a href="#section-2">04　教育背景</a><a href="#section-3">05　实习经历</a><a
+                    href="#section-4">06　工作经历</a><a href="#section-5">07　项目经历</a><a href="#section-6">08　自我评价</a><a
+                    href="#section-7">09　补充信息</a>
+                <div class="local-note">◈　你的资料，由你保管<br>PDF 在本机解析，资料仅保存至当前浏览器，不上传服务器。</div>
+            </aside>
+            <div>
+                <section class="card">
+                    <div class="card-head">
+                        <h2>我的三份简历</h2><span class="badge">独立保存</span>
+                    </div>
+                    <div class="grid"><label class="field">当前简历<select id="template-select"
+                                disabled></select></label><label class="field">模板名称<input id="template-name"
+                                maxlength="40" placeholder="例如：前端开发 / 产品经理 / 通用版"></label></div>
+                    <p class="muted">每份可分别导入 PDF。切换时自动保存当前修改；网申填写使用当前选中的简历。</p>
+                </section>
+                <section class="card" id="import">
+                    <div class="card-head">
+                        <h2>从一份简历开始</h2><span class="badge">本地解析</span>
+                    </div>
+                    <div class="upload" id="drop">
+                        <div class="upload-icon">▤</div>
+                        <p>拖入 PDF 简历，或选择文件</p><input id="pdf" type="file" accept=".pdf,application/pdf"
+                            aria-label="选择 PDF 简历">
+                        <p class="muted">文字型 PDF · 最大 12 MB · 扫描件暂不支持 OCR</p>
+                    </div>
+                    <div id="import-status" class="status" role="status" aria-live="polite"></div>
+                    <details>
+                        <summary>复制文字导入 / 查看 PDF 提取结果</summary><textarea id="raw-text" rows="8"
+                            placeholder="粘贴从简历中复制的文字……" aria-label="简历原文"></textarea><button id="parse-text"
+                            type="button">提取资料到下方表单</button>
+                        <p class="muted">仅补充空白字段；教育、经历和项目请逐项核对。原文不会作为网页填写内容。</p>
+                    </details>
+                </section>
+                <form id="profile-form">
+                    <div id="sections"></div>
+                    <div class="sticky-save"><span id="save-status" class="muted" role="status"
+                            aria-live="polite">修改后请保存资料</span><button class="primary" type="submit">保存我的简历 ↗</button>
+                    </div>
+                </form>
+                <section class="card">
+                    <h2>资料管理</h2>
+                    <p class="muted">备份包含全部三份简历和个人信息，请自行妥善保存。旧版单份备份可恢复到当前模板。</p>
+                    <div class="actions"><button id="export">导出三份简历备份</button><button id="restore">恢复备份</button><input
+                            id="restore-file" type="file" accept="application/json,.json" hidden><button id="clear"
+                            class="danger">清空全部三份简历</button></div>
+                    <p id="manage-status" class="status" role="status"></p>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="options.js"></script>
+</body>
+
+</html>

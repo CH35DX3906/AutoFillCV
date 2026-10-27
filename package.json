@@ -1,0 +1,1 @@
+{"name":"autofillcv","private":true,"version":"0.2.1","type":"module","scripts":{"test":"node tests/core.test.js","demo":"python3 -m http.server 8765 --bind 127.0.0.1"}}

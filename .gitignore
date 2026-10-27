@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+*.zip
+.DS_Store
+__pycache__/
+*.pyc
